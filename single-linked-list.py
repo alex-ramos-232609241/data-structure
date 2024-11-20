@@ -36,6 +36,18 @@ class Single_linked_list:
             node_new.node_next = self.head
             self.head = node_new
         self.size += 1
+    
+    def shift(self) -> str:
+        #remove first value from single linked list
+        if self.size == 0:
+            self.head = None
+            self.queue = None
+        else:
+            node_delete = self.head
+            self.head = node_delete.node_next
+            node_delete.node_next = None
+            self.size -= 1
+            return print(node_delete.value)
 
 sll = Single_linked_list()
 
@@ -43,5 +55,6 @@ sll.prepend("A")
 sll.prepend("B")
 sll.prepend("C")
 
+sll.shift()
+
 print(sll)
-    
