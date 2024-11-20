@@ -18,7 +18,7 @@ class Single_linked_list:
         return str(arr) + "size: " + str(self.size)
 
     def append(self, value) -> None:
-        node_new = self.Node(value)
+        node_new = self._Node(value)
         if self.head == None and self.queue == None:
             self.head = node_new
             self.queue = node_new
@@ -26,4 +26,15 @@ class Single_linked_list:
             self.queue.node_next = node_new
             self.queue = node_new
         self.size += 1
+    
+    def prepend(self, value) -> None:
+        node_new = self._Node(value)
+
+sll = Single_linked_list()
+
+sll.append("A")
+sll.append("B")
+sll.append("C")
+
+print(sll)
     
