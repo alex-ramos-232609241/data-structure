@@ -29,12 +29,19 @@ class Single_linked_list:
     
     def prepend(self, value) -> None:
         node_new = self._Node(value)
+        if self.head == None and self.queue == None:
+            self.head = node_new
+            self.queue = node_new
+        else:
+            node_new.node_next = self.head
+            self.head = node_new
+        self.size += 1
 
 sll = Single_linked_list()
 
-sll.append("A")
-sll.append("B")
-sll.append("C")
+sll.prepend("A")
+sll.prepend("B")
+sll.prepend("C")
 
 print(sll)
     
