@@ -64,12 +64,34 @@ class Single_linked_list:
             self.queue.node_next = None
             self.size -= 1
             return print(current_node.value)
+    
+    def get(self, index):
+        # get a node
+        if index == self.size - 1:
+            print(self.queue.value)
+            return self.queue
+        elif index == 0:
+            print(self.head.value)
+            return self.head
+        elif not (index >= self.size or index < 0):
+            current_node = self.head
+            counter = 0
+            while counter != index:
+                current_node = current_node.node_next
+                counter += 1
+            print(current_node.value)
+            return current_node
+        else:
+            return None
+
+
 sll = Single_linked_list()
 
 sll.prepend("A")
 sll.prepend("B")
 sll.prepend("C")
 
-sll.pop()
+sll.get(1)
+sll.get(2)
+sll.get(3)
 
-print(sll)
