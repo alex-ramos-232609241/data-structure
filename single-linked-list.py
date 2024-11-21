@@ -49,12 +49,27 @@ class Single_linked_list:
             self.size -= 1
             return print(node_delete.value)
 
+    def pop(self):
+        #delete last value from single linked list
+        if self.size == 0:
+            self.head = None
+            self.queue = None
+        else:
+            current_node = self.head
+            new_queue = current_node
+            while current_node.node_next != None:
+                new_queue = current_node
+                current_node = current_node.node_next
+            self.queue = new_queue
+            self.queue.node_next = None
+            self.size -= 1
+            return print(current_node.value)
 sll = Single_linked_list()
 
 sll.prepend("A")
 sll.prepend("B")
 sll.prepend("C")
 
-sll.shift()
+sll.pop()
 
 print(sll)
