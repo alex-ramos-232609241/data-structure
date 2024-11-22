@@ -84,13 +84,25 @@ class Single_linked_list:
         else:
             return None
     
-    def update(self, index, value):
+    def update(self, index, value) -> None:
         target_node = self.get(index)
         if target_node != None:
             target_node.value = value
         else:
             return None
 
+    def insert(self, index, value):
+        if index == self.size - 1:
+            return self.append(value)
+        elif not (index >= self.size or index < 0):
+            node_new = self._Node(value)
+            before_node = self.get(index)
+            node_next = before_node.node_next
+            before_node.node_next = node_new
+            node_new.node_next = node_next
+            self.size += 1
+        else:
+            return None
 
 sll = Single_linked_list()
 
@@ -99,7 +111,7 @@ sll.prepend("B")
 sll.prepend("C")
 sll.prepend("D")
 
-sll.update(2, "X")
+sll.insert(2, "W")
 print(sll)
 
 
