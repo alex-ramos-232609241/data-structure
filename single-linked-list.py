@@ -119,7 +119,18 @@ class Single_linked_list:
         else:
             return None
 
-    
+    def reverse(self):
+        node_reverse = None
+        current_node = self.head
+        self.queue = current_node
+        while current_node != None:
+            node_next = current_node.node_next
+            current_node.node_next = node_reverse
+            node_reverse = current_node
+            current_node = node_next
+        self.head = node_reverse
+        return self.head
+
 
 sll = Single_linked_list()
 
@@ -128,8 +139,7 @@ sll.prepend("B")
 sll.prepend("C")
 sll.prepend("D")
 
-sll.remove(1)
-sll.remove(2)
 print(sll)
-
+sll.reverse()
+print(sll)
 
