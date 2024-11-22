@@ -83,6 +83,13 @@ class Single_linked_list:
             return current_node
         else:
             return None
+    
+    def update(self, index, value):
+        target_node = self.get(index)
+        if target_node != None:
+            target_node.value = value
+        else:
+            return None
 
 
 sll = Single_linked_list()
@@ -90,8 +97,9 @@ sll = Single_linked_list()
 sll.prepend("A")
 sll.prepend("B")
 sll.prepend("C")
+sll.prepend("D")
 
-sll.get(1)
-sll.get(2)
-sll.get(3)
+sll.update(2, "X")
+print(sll)
+
 
