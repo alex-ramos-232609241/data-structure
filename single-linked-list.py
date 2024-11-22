@@ -103,6 +103,23 @@ class Single_linked_list:
             self.size += 1
         else:
             return None
+    
+    def remove(self, index):
+        if index == 0:
+            return self.shift()
+        elif index == self.size - 1:
+            return self.pop()
+        elif not (index >= self.size or index < 0):
+            before_node = self.get(index - 1)
+            node_remove = before_node.node_next
+            before_node.node_next = node_remove.node_next
+            node_remove.node_next = None
+            self.size -= 1
+            return node_remove
+        else:
+            return None
+
+    
 
 sll = Single_linked_list()
 
@@ -111,7 +128,8 @@ sll.prepend("B")
 sll.prepend("C")
 sll.prepend("D")
 
-sll.insert(2, "W")
+sll.remove(1)
+sll.remove(2)
 print(sll)
 
 
