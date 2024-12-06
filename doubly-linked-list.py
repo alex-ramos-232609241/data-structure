@@ -1,4 +1,4 @@
-class Double_linked_List:
+class DoubleLinkedList:
     class _Node:
         def __init__(self, value):
             self.value = value
@@ -141,7 +141,7 @@ class Double_linked_List:
             current_node = current_node.node_before
         self.head = node_reverse.node_before
 
-dll = Double_linked_List()
+dll = DoubleLinkedList()
 dll.prepend('A')
 dll.prepend('B')
 dll.prepend('C')

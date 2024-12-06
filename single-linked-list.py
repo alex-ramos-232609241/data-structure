@@ -1,4 +1,4 @@
-class Single_linked_list:
+class SingleLinkedList:
     class _Node:
         def __init__(self, value) -> None:
             self.value = value
@@ -132,7 +132,7 @@ class Single_linked_list:
         return self.head
 
 
-sll = Single_linked_list()
+sll = SingleLinkedList()
 
 sll.prepend("A")
 sll.prepend("B")
